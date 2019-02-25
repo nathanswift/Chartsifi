@@ -1,14 +1,28 @@
+<div class="artist-container">
 <h1>Click an Artist To View It</h1>
-<%= link_to 'Add Artist', new_billboard_artist_path(@billboard) %>
 <%= link_to 'View Songs', view_songs_path %>
-<table class="ui table">
+<%= link_to 'Add Artist', new_billboard_artist_path(@billboard) %>
+
+<div class="ui grid">
   <% @artists.each do |artist| %>
-  <tr>
-  <td><%= link_to artist.name, [@billboard, artist] %></td>
-  <td><%= link_to artist.avatar, [@billboard, artist] %></td>
-  <td><%= link_to artist.genre, [@billboard, artist] %></td>
-  </tr>
-  <br>
-  <br>
+    <div class="thirty-two wide mobile sixteen wide tablet eight wide computer column">
+      <div class="ui card">
+        <div class="image">
+          <img src="https://robohash.org/<%= artist.avatar %>?set=set2" />
+        </div>
+        <div class="content">
+          <%= link_to "#{artist.name}", artist, class: "header" %>
+          <br>
+          <%= link_to "#{artist.genre}", artist, class: "header" %>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+              <%= link_to 'Songs', artist_songs_path(artist) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</table>
+</div>
