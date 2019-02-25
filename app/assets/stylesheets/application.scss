@@ -1,2 +1,20 @@
 @import "semantic-ui";
 @import "billboards";
+
+body {
+    background-color: #36454f;
+}
+
+.billboard {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .image{
+
+    }
+}
+
