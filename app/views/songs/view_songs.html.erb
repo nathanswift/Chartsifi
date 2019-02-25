@@ -1,0 +1,9 @@
+<h1> View All Songs </h1>
+<% @view_songs.each do |song| %>
+<table class="ui table">
+ <tr> <%=song.name %></tr>
+ <tr> <%=song.url %></tr>
+ <tr> <%=song.body %></tr>
+ <tr><%= link_to 'Delete', [@artist, song], method: :delete %>  </tr>
+</table>
+<% end %>

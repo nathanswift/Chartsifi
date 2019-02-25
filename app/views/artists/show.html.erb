@@ -1,0 +1,9 @@
+<h1><%= @billboard.name %></h1>
+<h4>Name: <%= @artist.name %></h4>
+<h4>Avatar: <%= @artist.avatar %></h4>
+<h4>Genre: <%= @artist.genre %></h4>
+<br />
+<%= link_to 'Add Song', new_artist_song_path(@artist), class: 'ui button blue'%>
+<br />
+<br />
+<%= link_to 'Delete Artist', [@billboard, @artist], method: :delete %> |

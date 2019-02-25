@@ -1,0 +1,15 @@
+<div class="ui card">
+    <div class="image">
+        <img src="https://robohash.org/ <%= @billboard.avatar %>?set=set4" />
+    </div>
+    <div class="content">
+        <p class="header">
+            <%= @billboard.name %> 
+        </p>
+    </div>
+    <div class="extra content">
+        <%= link_to 'Edit',  edit_billboard_path(@billboard), class: "ui button orange"%>
+        <%= link_to 'Back',  billboards_path, class: "ui button blue"%>
+        <%= link_to 'View Artists', billboard_artists_path(@billboard) %>
+    </div>
+</div>

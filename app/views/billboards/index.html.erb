@@ -1,0 +1,38 @@
+<h1 class="ui header">Billboards</h1>
+<%= link_to 'New Billboard', new_billboard_path %>
+<%= link_to 'View Artists', view_artists_path %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+  <% @billboards.each do |billboard| %>
+    <div class="thirty-two wide mobile sixteen wide tablet eight wide computer column">
+      <div class="ui card">
+        <div class="image">
+          <img src="https://robohash.org/<%= billboard.avatar %>?set=set2" />
+        </div>
+        <div class="content">
+          <%= link_to "#{billboard.name}", billboard, class: "header" %>
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+              <%= link_to 'Artists', billboard_artists_path(billboard) %>
+            </div>
+            <div class="ui basic red button">
+              <%= link_to 'View Songs', view_songs_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<!--
+I need to make a new partial in my billboards that gets all the artists regardless of id and displays them
+then i need to put that into my routes as a get request
+then i can view all of my artists from my home page!
+
+
+Change delete billboard options to songs
+ -->

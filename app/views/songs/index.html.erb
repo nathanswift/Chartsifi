@@ -1,0 +1,11 @@
+<h1>Click a Song To View It</h1>
+<%= link_to 'Add Song', new_artist_song_path(@artist) %>
+<ul>
+  <% @songs.each do |song| %>
+  <table class="ui table">
+    <tr><%= link_to song.name, [@artist, song] %></tr>
+    <tr><%= link_to song.url, [@artist, song] %></tr>
+    <tr><%= link_to song.body, [@artist, song] %></tr>
+    <tr><%= link_to 'Delete', [@artist, song], method: :delete %>  </tr>
+  <% end %>
+</table>

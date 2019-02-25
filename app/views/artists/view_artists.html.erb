@@ -1,0 +1,8 @@
+<h1> View All Artists </h1>
+<% @artist_view.each do |artist| %>
+<table class="ui table">
+ <tr> <%=artist.name %></tr>
+ <tr> <%=artist.avatar %></tr>
+ <tr> <%=artist.genre %></tr>
+</table>
+<% end %>
